@@ -9,11 +9,15 @@ class ContactHelper:
         wd = self.app.wd
         self.app.open_home_page()
         # init contact creation
-        wd.find_element_by_link_text("add new").click()
+        self.open_user_creation_page()
         self.fill_contact_form(contact)
         # submit contact creation
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
         self.app.open_home_page()
+
+    def open_user_creation_page(self):
+        wd = self.app.wd
+        wd.find_element_by_link_text("add new").click()
 
     def fill_contact_form(self, contact):
         wd = self.app.wd
