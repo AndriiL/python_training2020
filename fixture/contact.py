@@ -1,5 +1,3 @@
-
-
 class ContactHelper:
 
     def __init__(self, app):
@@ -17,7 +15,7 @@ class ContactHelper:
 
     def open_user_creation_page(self):
         wd = self.app.wd
-        if not(wd.current_url.endswith("/edit.php") and len(wd.find_elements_by_name("submit")) > 0):
+        if not (wd.current_url.endswith("/edit.php") and len(wd.find_elements_by_name("submit")) > 0):
             wd.find_element_by_link_text("add new").click()
 
     def fill_contact_form(self, contact):
@@ -61,7 +59,7 @@ class ContactHelper:
 
     def select_modify_user(self):
         wd = self.app.wd
-        if not(wd.current_url.endswith("/edit.php") and len(wd.find_elements_by_name("update")) > 0):
+        if not (wd.current_url.endswith("/edit.php") and len(wd.find_elements_by_name("update")) > 0):
             wd.find_element_by_xpath("//img[@title='Edit']").click()
 
     def return_to_home_page(self):
